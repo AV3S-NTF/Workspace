@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<canvas id = "basic" width = "720" height = "480" style = "border:1px solid #000000;"></canvas>
+		<script>
+			var WIDTH = 720;
+			var HEIGHT = 480;
+
+			var offsetX = 50;
+
+			var MAX_CHART = 10;
+
+			var values = 4;
+
+			var value1 = 1;
+			var value2 = 3;
+			var value3 = 2;
+			var value4 = 5;
+			var changes = (WIDTH - offsetX) / values;
+
+			var canvas = document.getElementById("basic");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#FF0000";
+			ctx.moveTo(offsetX, 0);
+			ctx.lineTo(offsetX, HEIGHT);
+
+			ctx.lineTo(changes + offsetX, HEIGHT - ((HEIGHT / MAX_CHART) * value1));
+			ctx.lineTo((changes * 2) + offsetX, HEIGHT - ((HEIGHT / MAX_CHART) * value2));
+			ctx.lineTo((changes * 3) + offsetX, HEIGHT - ((HEIGHT / MAX_CHART) * value3));
+			ctx.lineTo((changes * 4) + offsetX, HEIGHT - ((HEIGHT / MAX_CHART) * value4));
+
+			ctx.lineTo(WIDTH, HEIGHT);
+			ctx.lineTo(offsetX, HEIGHT);
+			ctx.lineTo(offsetX, 0);
+			ctx.stroke();
+		</script>
+	</body>
+</html>
